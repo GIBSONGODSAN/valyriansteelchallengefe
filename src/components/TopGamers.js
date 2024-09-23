@@ -44,7 +44,9 @@ const TopGamers = () => {
     };
 
     return (
+        
         <div className="relative min-h-screen bg-fixed bg-cover bg-center" style={{ backgroundImage: `url(${Valyrian})` }}>
+
             {/* Overlay content */}
             <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
