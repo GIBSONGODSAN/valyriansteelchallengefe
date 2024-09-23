@@ -51,7 +51,7 @@ const TopGamers = () => {
             {/* Overlay content */}
             <div className="relative z-5 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-10">
                 {/* Responsive Title */}
-                <div className="relative z-10 flex justify-center items-center pt-20 pb-30">
+                <div className="relative z-10 flex justify-center items-center pt-20 pb-20">
                     <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-red-700 font-cinzeldecorative text-stroke">
                         The Valyrian Steel Challenge
                     </h1>
@@ -63,28 +63,42 @@ const TopGamers = () => {
                         Leaderboard
                     </h2>
 
-                    {/* Responsive Table */}
-                    <table className="min-w-full table-auto border-collapse font-cinzel">
-                        <thead>
-                            <tr>
-                                <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Position</th>
-                                <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Team Name</th>
-                                <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">College Name</th>
-                                <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Total Score</th>
-                            </tr>
+                    {/* Responsive Table with Optimizations */}
+                    <div className="overflow-x-auto">
+                    <table className="min-w-full table-auto border-collapse font-cinzel text-sm sm:text-base">
+                        <thead className="hidden sm:table-header-group">
+                        <tr>
+                            <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Position</th>
+                            <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Team Name</th>
+                            <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">College Name</th>
+                            <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Total Score</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            {currentGamers.map((gamer, index) => (
-                                <tr key={gamer._id} className={`${index % 2 === 0 ? 'bg-black bg-opacity-30' : 'bg-black bg-opacity-30'}`}>
-                                    <td className="px-2 sm:px-4 py-2 text-gray-200">{indexOfFirstGamer + index + 1}</td>
-                                    <td className="px-2 sm:px-4 py-2 text-gray-200">{gamer.teamname}</td>
-                                    <td className="px-2 sm:px-4 py-2 text-gray-200">{gamer.collegename}</td>
-                                    <td className="px-2 sm:px-4 py-2 text-gray-200">{gamer.totalScore}</td>
-                                </tr>
-                            ))}
+                        {currentGamers.map((gamer, index) => (
+                            <tr key={gamer._id} className={`${index % 2 === 0 ? 'bg-black bg-opacity-30' : 'bg-black bg-opacity-20'} sm:table-row block sm:table-row mb-4`}>
+                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
+                                <span className="sm:hidden font-semibold text-gray-400">Position: </span>
+                                {indexOfFirstGamer + index + 1}
+                            </td>
+                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
+                                <span className="sm:hidden font-semibold text-gray-400">Team Name: </span>
+                                {gamer.teamname}
+                            </td>
+                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
+                                <span className="sm:hidden font-semibold text-gray-400">College Name: </span>
+                                {gamer.collegename}
+                            </td>
+                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
+                                <span className="sm:hidden font-semibold text-gray-400">Total Score: </span>
+                                {gamer.totalScore}
+                            </td>
+                            </tr>
+                        ))}
                         </tbody>
                     </table>
-
+                    </div>
+                    
                     {/* Pagination Controls */}
                     <div className="flex justify-between mt-4">
                         <button
