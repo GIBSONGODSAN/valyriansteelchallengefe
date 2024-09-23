@@ -55,11 +55,9 @@ const TopGamers = () => {
                 
                 {/* Responsive Title */}
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-red-700 font-cinzeldecorative text-stroke">
-                    The Valyrian Steel
+                    The Valyrian Steel Challenge
                 </h1>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-red-700 mb-10 font-cinzeldecorative text-stroke">
-                    Challenge
-                </h1>
+                
                 {/* Leaderboard Card */}
                 <div className="bg-black bg-opacity-40 rounded-lg p-4 sm:p-6 md:p-8 shadow-lg w-full max-w-3xl sm:max-w-4xl md:max-w-5xl lg:max-w-6xl mx-auto">
                     <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-4 sm:mb-6 font-cinzeldecorative">
