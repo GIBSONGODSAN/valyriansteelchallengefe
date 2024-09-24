@@ -24,9 +24,6 @@ const TopGamers = () => {
         fetchGamers();
     }, []);
 
-    if (loading) return <p className="text-center text-xl text-gray-300">Loading...</p>;
-    if (error) return <p className="text-center text-xl text-red-500">Error: {error}</p>;
-
     // Get the current gamers for the page
     const indexOfLastGamer = currentPage * gamersPerPage;
     const indexOfFirstGamer = indexOfLastGamer - gamersPerPage;
@@ -44,9 +41,7 @@ const TopGamers = () => {
     };
 
     return (
-        
         <div className="relative min-h-screen bg-fixed bg-cover bg-center" style={{ backgroundImage: `url(${Valyrian})` }}>
-
             {/* Overlay content */}
             <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
@@ -67,40 +62,46 @@ const TopGamers = () => {
 
                     {/* Responsive Table with Optimizations */}
                     <div className="overflow-x-auto">
-                    <table className="min-w-full table-auto border-collapse font-cinzel text-sm sm:text-base">
-                        <thead className="hidden sm:table-header-group">
-                        <tr>
-                            <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Position</th>
-                            <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Team Name</th>
-                            <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">College Name</th>
-                            <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Total Score</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {currentGamers.map((gamer, index) => (
-                            <tr key={gamer._id} className={`${index % 2 === 0 ? 'bg-black bg-opacity-30' : 'bg-black bg-opacity-20'} sm:table-row block sm:table-row mb-4`}>
-                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
-                                <span className="sm:hidden font-semibold text-gray-400">Position: </span>
-                                {indexOfFirstGamer + index + 1}
-                            </td>
-                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
-                                <span className="sm:hidden font-semibold text-gray-400">Team Name: </span>
-                                {gamer.teamname}
-                            </td>
-                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
-                                <span className="sm:hidden font-semibold text-gray-400">College Name: </span>
-                                {gamer.collegename}
-                            </td>
-                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
-                                <span className="sm:hidden font-semibold text-gray-400">Total Score: </span>
-                                {gamer.totalScore}
-                            </td>
-                            </tr>
-                        ))}
-                        </tbody>
-                    </table>
+                        {loading ? (
+                            <p className="text-center text-xl text-gray-300">Loading...</p>
+                        ) : error ? (
+                            <p className="text-center text-xl text-red-500">Error: {error}</p>
+                        ) : (
+                            <table className="min-w-full table-auto border-collapse font-cinzel text-sm sm:text-base">
+                                <thead className="hidden sm:table-header-group">
+                                    <tr>
+                                        <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Position</th>
+                                        <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Team Name</th>
+                                        <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">College Name</th>
+                                        <th className="px-2 sm:px-4 py-2 text-left text-gray-300 font-semibold">Total Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {currentGamers.map((gamer, index) => (
+                                        <tr key={gamer._id} className={`${index % 2 === 0 ? 'bg-black bg-opacity-30' : 'bg-black bg-opacity-20'} sm:table-row block sm:table-row mb-4`}>
+                                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
+                                                <span className="sm:hidden font-semibold text-gray-400">Position: </span>
+                                                {indexOfFirstGamer + index + 1}
+                                            </td>
+                                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
+                                                <span className="sm:hidden font-semibold text-gray-400">Team Name: </span>
+                                                {gamer.teamname}
+                                            </td>
+                                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
+                                                <span className="sm:hidden font-semibold text-gray-400">College Name: </span>
+                                                {gamer.collegename}
+                                            </td>
+                                            <td className="px-2 sm:px-4 py-2 text-gray-200 sm:table-cell block">
+                                                <span className="sm:hidden font-semibold text-gray-400">Total Score: </span>
+                                                {gamer.totalScore}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        )}
                     </div>
-                    
+
                     {/* Pagination Controls */}
                     <div className="flex justify-between mt-4">
                         <button
