@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css'; // or wherever your CSS file is located
 import GamerForm from './components/GamerForm';
 import LandingPage from './pages/LandingPage';
+import Games from '../src/components/FlipCard';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/gamerregister" element={<GamerForm />} />
+          <Route path="/game" element={<Games />} />
         </Routes>
       </Router>
     </div>

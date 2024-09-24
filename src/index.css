@@ -13,3 +13,12 @@
   width: 100%;
   height: 100vh;
 }
+
+/* Add this in your global CSS or as part of Tailwind's custom configuration */
+.clip-path-front {
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+}
+
+.clip-path-back {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+}
