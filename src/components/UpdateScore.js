@@ -80,6 +80,7 @@ const UpdateScore = () => {
       .then(response => {
         console.log('Score submitted successfully:', response.data);
         window.alert('Score submitted successfully!');
+        window.location('/') // Reload the page to update the scores
       })
       .catch(error => {
         console.error('Error submitting score:', error);

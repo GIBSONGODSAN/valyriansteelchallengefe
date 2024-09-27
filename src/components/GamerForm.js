@@ -30,6 +30,7 @@ const GamerForm = () => {
             if (response.status === 201) {
                 setMessage('Gamer details submitted successfully!');
                 window.alert('New user created!');
+                window.location('/');
                 // Optionally, reset the form after submission
                 setGamerData({
                     teamname: '',
