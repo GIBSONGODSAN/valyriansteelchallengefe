@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const Header = () => {
   const navigate = useNavigate();
 
-  // Wrap targetDate with useMemo to avoid recalculating on every render
   const targetDate = useMemo(() => new Date('2024-09-28T15:00:00'), []);
 
   const [timeLeft, setTimeLeft] = useState({});
@@ -33,7 +32,7 @@ const Header = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDate]); // Now targetDate is memoized and included as a dependency
+  }, [targetDate]);
 
   const handleRegisterClick = () => {
     navigate('/gamerregister');
@@ -48,9 +47,9 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-black h-16 flex items-center justify-between px-4">
+    <header className="bg-black h-16 flex items-center justify-between px-4 flex-wrap">
       {/* Timer on the left */}
-      <div className="text-white text-lg font-cinzeldecorative ml-10">
+      <div className="text-white text-lg font-cinzeldecorative ml-4 md:ml-10 mb-2 md:mb-0">
         {timeLeft.days !== undefined ? (
           <>
             {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
@@ -61,20 +60,20 @@ const Header = () => {
       </div>
 
       {/* Container for buttons on the right */}
-      <div className="ml-auto flex space-x-4">
+      <div className="flex space-x-2 md:space-x-4 ml-auto mt-2 md:mt-0">
         <button
-          className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 font-cinzeldecorative"
+          className="bg-red-500 text-white py-1 px-3 md:py-2 md:px-4 rounded-lg hover:bg-red-600 font-cinzeldecorative text-sm md:text-base"
           onClick={handleUpdateScoreClick}>
             UpdateScore
         </button>
         <button
-          className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 font-cinzeldecorative"
+          className="bg-red-500 text-white py-1 px-3 md:py-2 md:px-4 rounded-lg hover:bg-red-600 font-cinzeldecorative text-sm md:text-base"
           onClick={handleGamesClick}
         >
           Games
         </button>
         <button
-          className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 font-cinzeldecorative"
+          className="bg-red-500 text-white py-1 px-3 md:py-2 md:px-4 rounded-lg hover:bg-red-600 font-cinzeldecorative text-sm md:text-base"
           onClick={handleRegisterClick}
         >
           Register
