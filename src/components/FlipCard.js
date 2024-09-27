@@ -61,13 +61,14 @@ function CardGrid() {
         {/* Responsive grid for different screen sizes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* First Row: Three cards on large screens, stack on small screens */}
-          <FlipCard name="Hangman" description="Description for Hangman" />
-          <FlipCard name="Dragon’s Hunt" description="Description for Dragon’s Hunt" />
-          <FlipCard name="Stream go Hero" description="Description for Stream go Hero" />
+          <FlipCard name="Dragon Shout" description="Control a dragon by shouting or screaming! Just like Flappy Bird, but your voice guides the dragon through obstacles. How far can you go before your dragon crashes?" />
+          <FlipCard name="Essos Escape" description="Guide your object through a moving background, avoiding obstacles that fall from the top of the screen while collecting points. Dodge wisely, or you lose!" />
+          <FlipCard name="Dragon Shout" description="Description for Stream go Hero" />
 
           {/* Second Row: Two cards on large screens */}
-          <FlipCard name="Unusual Floppy Bird" description="Description for Unusual Floppy Bird" />
-          <FlipCard name="Dracarys Dash" description="Description for Dracarys Dash" />
+          <FlipCard name="Valar Morghulis" description="Using your virtual hand, swat crowns on the screen for points, but be careful! Accidentally grabbing a dagger will cost you. Powered by OpenCV." />
+          <FlipCard name="Dracarys Dash" description=" Control a bar at the bottom of the screen with your hand to catch falling balls. The more balls you catch, the higher your score. Built with OpenCV for gesture control.
+" />
         </div>
       </div>
     </div>
