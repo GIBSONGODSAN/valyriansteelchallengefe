@@ -79,6 +79,7 @@ const UpdateScore = () => {
       .post('https://valyriansteelchallenge.onrender.com/gamer/score', requestBody)
       .then(response => {
         console.log('Score submitted successfully:', response.data);
+        window.alert('Score submitted successfully!');
       })
       .catch(error => {
         console.error('Error submitting score:', error);

@@ -49,7 +49,7 @@ const TopGamers = () => {
             <div className="relative z-5 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-10">
                 {/* Responsive Title */}
                 <div className="relative z-10 flex justify-center items-center pt-20 pb-20">
-                    <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-red-700 font-cinzeldecorative text-stroke">
+                    <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-amber-100 font-cinzeldecorative text-stroke">
                         The Valyrian Steel Challenge
                     </h1>
                 </div>

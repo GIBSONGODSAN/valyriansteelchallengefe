@@ -10,7 +10,7 @@ const GamerForm = () => {
         membernameone: '',
         membernametwo: '',
         membernamethree: '',
-        membernamefour: '',
+        membernamefour: 'null',
     });
 
     const [message, setMessage] = useState('');
@@ -124,7 +124,7 @@ const GamerForm = () => {
                             className="block text-gray-300 text-lg font-semibold font-cinzel text-center pr-4"
                             htmlFor="membernameone"
                         >
-                            Team Member 1
+                            Member 1
                         </label>
                         <input
                             type="text"
@@ -143,7 +143,7 @@ const GamerForm = () => {
                             className="block text-gray-300 text-lg font-semibold font-cinzel text-center pr-4"
                             htmlFor="membernametwo"
                         >
-                            Team Member 2
+                            Member 2
                         </label>
                         <input
                             type="text"
@@ -162,7 +162,7 @@ const GamerForm = () => {
                             className="block text-gray-300 text-lg font-semibold font-cinzel text-center pr-4"
                             htmlFor="membernamethree"
                         >
-                            Team Member 3
+                            Contact Number
                         </label>
                         <input
                             type="text"
@@ -176,7 +176,7 @@ const GamerForm = () => {
                     </div>
 
                     {/* Team Member 4 */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+                    {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
                         <label
                             className="block text-gray-300 text-lg font-semibold font-cinzel text-center pr-4"
                             htmlFor="membernamefour"
@@ -192,7 +192,7 @@ const GamerForm = () => {
                             className="w-full px-4 py-2 bg-black bg-opacity-60 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-900"
                             required
                         />
-                    </div>
+                    </div> */}
 
                     {/* Submit Button */}
                     <div className="flex justify-center">
