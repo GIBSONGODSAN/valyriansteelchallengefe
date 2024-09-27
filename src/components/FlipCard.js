@@ -40,7 +40,7 @@ class FlipCard extends React.Component {
           className="back-card bg-black bg-opacity-40 p-4 rounded-lg shadow-lg flex flex-col justify-center items-center"
           style={{ height: '200px' }} // Set default height of 200px
         >
-          <h3 className="text-2xl text-white text-center mb-4">{description}</h3>
+          <h3 className="text-1xl text-white text-center mb-4">{description}</h3>
         </div>
       </ReactCardFlip>
     );
